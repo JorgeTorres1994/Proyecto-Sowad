@@ -1,4 +1,4 @@
-package aplica.upn.edu.app.model;
+ package aplica.upn.edu.app.model;
 
 import java.sql.Date;
 
@@ -61,7 +61,4 @@ public class Desaparecido {
 	public void setNacionalidad(String nacionalidad) {
 		this.nacionalidad = nacionalidad;
 	}	
-	
-	
-		
 }

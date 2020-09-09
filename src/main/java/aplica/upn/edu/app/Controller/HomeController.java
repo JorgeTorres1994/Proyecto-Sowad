@@ -1,5 +1,4 @@
 package aplica.upn.edu.app.Controller;
-
 import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
@@ -25,12 +24,7 @@ public class HomeController {
 	@RequestMapping(value="/", method = RequestMethod.GET)
 	public String mostrarPrincipal(Model model) {
 		List<Desaparecido> desaparecidos = getLista();
-		/*biblioteca.add("A");
-		biblioteca.add("B");
-		biblioteca.add("C");*/
-		
-		
-		model.addAttribute("BLibro", desaparecidos);
+		model.addAttribute("Persona", desaparecidos);
 	    return "home";
 	}
 	
@@ -40,7 +34,7 @@ public class HomeController {
 		try {
 			lista = new LinkedList<>();
 			Desaparecido d = new Desaparecido();
-			d.setId_desaparecido('1');
+			d.setId_desaparecido(1);
 			d.setApellidos("Torres Pastor");
 			d.setNombres("Jorge Anthony");
 			d.setDni("71308475");
@@ -54,7 +48,7 @@ public class HomeController {
 			d2.setNombres("Wilson");
 			d2.setDni("75406019");
 			d2.setEdad("23");
-			d2.setFechaNacimiento((Date) formatter.parse("28-12-1996"));
+			d2.setFechaNacimiento((Date) formatter.parse("12-12-2018"));
 			d2.setNacionalidad("Colombiana");
 			
 			lista.add(d);
@@ -66,9 +60,8 @@ public class HomeController {
 		}
 		
 	}
-	
-    @RequestMapping(value="/detail")
-    public String mostrarDetalle(Model model) {
+   /* @RequestMapping(value="/detail")
+  public String mostrarDetalle(Model model) {
     	//String Proyecto = "Sistema de Reserva, Prestamos y Devolucion de Libros)";
     	int id_desaparecido = '1';
     	String apellidos = "Torres Pastor";
@@ -76,17 +69,18 @@ public class HomeController {
     	String dni = "71308475";
     	String edad = "26";
     	Date fechaNacimiento = "05-09-1994";
-		
+
 		//model.addAttribute("proyecto", Proyecto);
 		model.addAttribute("titulo", titulo);
 		model.addAttribute("ISBN", ISBN);
 		model.addAttribute("fechaEdicion",fechaEdicion);
 		model.addAttribute("autor", autor);
 		model.addAttribute("editorial", editorial);
+	
 		
 		
 		return "detalle";
-    }
+    }*/
 	
 	/*@RequestMapping(value="/",method=RequestMethod.GET)
 	public String mostrarPrincipal() {
